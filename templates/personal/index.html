@@ -1,0 +1,22 @@
+{% extends 'personal/base.html' %}
+
+{% block content %}
+
+    {% for dato in datos %}
+        <table>
+            <tr>
+                <td>{{dato.Nombre}}</td>
+                <td>{{dato.Apellido_paterno}}</td>
+                <td>{{dato.Apellido_materno}}</td>
+                <td><a href="{% url 'ver' id=dato.id %}">Ver</a></td>
+                <td><a href="{% url 'editar' id=dato.id  %}">Editar</a></td>
+                <td><a href="{% url 'eliminar' id=dato.id %}">Eliminar</a></td>
+            </tr>
+
+        </table>
+    
+
+    {% endfor %}
+
+
+{% endblock %}

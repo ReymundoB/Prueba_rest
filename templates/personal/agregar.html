@@ -1,0 +1,14 @@
+{% extends 'personal/base.html' %}
+
+
+{% block content %}
+    <form action="{% url 'nuevo' %}" method="POST">
+        {% csrf_token %}
+        <table>
+            {{form.as_table}}
+            
+        </table>
+        <button type="submit">Registrar</button>
+
+    </form>    
+{% endblock %}
