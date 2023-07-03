@@ -1,22 +1,39 @@
 {% extends 'personal/base.html' %}
 
 {% block content %}
+    
+   <div class="container  text-center mt-2">
 
-    {% for dato in datos %}
-        <table>
-            <tr>
-                <td>{{dato.Nombre}}</td>
-                <td>{{dato.Apellido_paterno}}</td>
-                <td>{{dato.Apellido_materno}}</td>
-                <td><a href="{% url 'ver' id=dato.id %}">Ver</a></td>
-                <td><a href="{% url 'editar' id=dato.id  %}">Editar</a></td>
-                <td><a href="{% url 'eliminar' id=dato.id %}">Eliminar</a></td>
-            </tr>
+   
+        <table class="table table-hover">
+              
+            
+                <tr class="table-dark">
+                    <th>NOMBRE</th>
+                    <th>APELLIDO PATERNO</th>
+                    <th>APELLIDO MATERNO</th>
+                    <th>VER</th>
+                    <th>EDITAR</th>
+                    <th>ELIMINAR</th>
+                </tr>
+             
+        {% for dato in datos %}   
+            
+                <tr>
+                    <td>{{dato.Nombre}}</td>
+                    <td>{{dato.Apellido_paterno}}</td>
+                    <td>{{dato.Apellido_materno}}</td>
+                    <td><a href="{% url 'ver' id=dato.id %}">Ver</a></td>
+                    <td><a href="{% url 'editar' id=dato.id  %}">Editar</a></td>
+                    <td><a href="{% url 'eliminar' id=dato.id %}">Eliminar</i></a></td>
+                </tr>
+
+            
+         {% endfor %}
 
         </table>
     
-
-    {% endfor %}
+    </div>
 
 
 {% endblock %}

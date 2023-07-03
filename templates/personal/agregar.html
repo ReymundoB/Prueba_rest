@@ -2,13 +2,24 @@
 
 
 {% block content %}
-    <form action="{% url 'nuevo' %}" method="POST">
-        {% csrf_token %}
-        <table>
-            {{form.as_table}}
+<main class="container mt-2">
+    <div class="row">
+        <div class="col-md-4 offset-md-4">
             
-        </table>
-        <button type="submit">Registrar</button>
+            <form action="{% url 'nuevo' %}" method="POST" class="card card-body">
+                <h2 class="text-center">Registro</h2>
+                {% csrf_token %}
+                <table>
+                    {{form.as_table}}
+                    
+                </table>
+                <button  type="submit" class="btn btn-dark">Agregar</button>
+        
+            </form> 
 
-    </form>    
+
+        </div>
+    </div>
+</main>
 {% endblock %}
+
